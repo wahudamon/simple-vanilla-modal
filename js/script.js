@@ -1,27 +1,30 @@
-const modals = document.querySelectorAll("[data-modal]");
+const trigger = document.querySelector("[data-modal]");
+const modal = document.getElementById(trigger.dataset.modal);
 const buttons = document.querySelectorAll(".modal-footer__button");
 
-modals.forEach((trigger) => {
-  trigger.addEventListener("click", (event) => {
-    event.preventDefault();
+document.addEventListener("keydown", (event) => {
+  if ((event.keyCode || event.charCode) === 27) {
+    modal.classList.remove("open");
+  }
+});
 
-    const modal = document.getElementById(trigger.dataset.modal);
+trigger.addEventListener("click", (event) => {
+  event.preventDefault();
 
-    modal.classList.add("open");
+  modal.classList.add("open");
 
-    const exits = modal.querySelectorAll(".modal-exit");
+  const exits = modal.querySelectorAll(".modal-exit");
 
-    exits.forEach((exit) => {
-      exit.addEventListener("click", (event) => {
-        event.preventDefault();
-        modal.classList.remove("open");
-      });
+  exits.forEach((exit) => {
+    exit.addEventListener("click", (event) => {
+      event.preventDefault();
+      modal.classList.remove("open");
     });
+  });
 
-    buttons.forEach((button) => {
-      button.addEventListener("click", (event) => {
-        modal.classList.remove("open");
-      });
+  buttons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+      modal.classList.remove("open");
     });
   });
 });
