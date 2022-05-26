@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.container a {
+  padding: 30px;
+  background: teal;
+  color: #fff;
+  font-weight: bold;
+  font-size: 24px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.modal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal.open {
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0s;
+}
+.modal-bg {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;
+}
+.modal-container {
+  border-radius: 10px;
+  background: #fff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  width: 300px;
+  height: 400px;
+}
+.modal-close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  outline: none;
+  appearance: none;
+  color: red;
+  background: none;
+  border: 0px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.modal-header {
+  height: 50px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.modal-body {
+  height: 300px;
+  margin-bottom: 10px;
+  overflow-y: scroll;
+}
+.modal-footer {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+}
+.modal-footer__container {
+  padding: 10px;
+  width: 100px;
+}
+.modal-footer__button {
+  width: 100%;
+  border: none;
+  padding: 5px;
+  border-radius: 4px;
+  background-color: teal;
+  color: #fff;
+  font-weight: 400;
+}
+
+/*# sourceMappingURL=style.css.map */
